@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: fe6f146a-820a-4eaf-98f3-8e0e3dfa3a99
+          heroku_app_name: "final-portfolio-project"
+          heroku_email: "amurthy@wustl.edu"
